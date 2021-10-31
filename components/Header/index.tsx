@@ -15,8 +15,8 @@ export const Header: React.FC = () => {
       <div className="container d-flex align-items-center justify-content-between">
         <Link href="/rooms">
           <div className={clsx(styles.headerLogo, 'd-flex align-items-center cup')}>
-            <img src="/static/hand-wave.png" alt="Logo" className="mr-5" />
-            <h4>Clubhouse</h4>
+            <img src="/static/js-logo.png" alt="Logo" className="mr-5" />
+            <h4>JetSpeech</h4>
           </div>
         </Link>
         <Link href="/profile/1">

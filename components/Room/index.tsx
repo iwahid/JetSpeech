@@ -148,7 +148,7 @@ export const Room: React.FC<RoomProps> = ({ title }) => {
           <Link href="/rooms">
             <a>
               <Button color="gray" className={styles.leaveButton}>
-                <img width={18} height={18} src="/static/peace.png" alt="Hand black" />
+                {/* <img width={18} height={18} src="/static/peace.png" alt="Hand black" /> */}
                 Leave quietly
               </Button>
             </a>

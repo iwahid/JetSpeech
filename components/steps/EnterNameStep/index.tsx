@@ -10,7 +10,7 @@ import { Avatar } from '../../Avatar';
 
 export const EnterNameStep = () => {
   const { onNextStep, userData, setFieldValue } = React.useContext(MainContext);
-  const [inputValue, setInputValue] = React.useState<string>(userData.fullname);
+  const [inputValue, setInputValue] = React.useState<string>(userData.fullname ? userData.fullname : userData.username);
   const nextDisabled = !inputValue;
 
   const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,9 +25,9 @@ export const EnterNameStep = () => {
   return (
     <div className={styles.block}>
       <StepInfo
-        icon="/static/man.png"
+        icon="/static/js-logo.png"
         title="What’s your full name?"
-        description="People use real names on Clubhouse :) Thnx!"
+        description="People use real names on JetSpeech :) Thnx!"
       />
       <WhiteBlock className={clsx('m-auto', styles.whiteBlock)}>
         <Avatar src={userData.avatarUrl} width="120px" height="120px" />
@@ -39,7 +39,7 @@ export const EnterNameStep = () => {
             placeholder="Enter fullname"
           />
         </div>
-        <Button disabled={nextDisabled} onClick={onClickNextStep}>
+        <Button className={styles.button} disabled={nextDisabled} onClick={onClickNextStep}>
           Next
           <img className="d-ib ml-10" src="/static/arrow.svg" />
         </Button>

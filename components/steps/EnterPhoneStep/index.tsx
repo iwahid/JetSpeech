@@ -37,7 +37,7 @@ export const EnterPhoneStep = () => {
   return (
     <div className={styles.block}>
       <StepInfo
-        icon="/static/phone.png"
+        icon="/static/js-logo.png"
         title="Enter your phone #"
         description="We will send you a confirmation code"
       />
@@ -53,7 +53,7 @@ export const EnterPhoneStep = () => {
             onValueChange={({ formattedValue, value }) => setValues({ formattedValue, value })}
           />
         </div>
-        <Button disabled={isLoading || nextDisabled} onClick={onSubmit}>
+        <Button className={styles.button}  disabled={isLoading || nextDisabled} onClick={onSubmit}>
           {isLoading ? (
             'Sending...'
           ) : (

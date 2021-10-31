@@ -7,15 +7,18 @@ import { StepInfo } from '../../StepInfo';
 import styles from './GitHubStep.module.scss';
 import React from 'react';
 import { MainContext, UserData } from '../../../pages';
+import { SERVER_URL } from '../../../utils/config';
 
 export const GitHubStep: React.FC = () => {
   const { onNextStep, setUserData } = React.useContext(MainContext);
 
   /* NOTE: При запросе авторизации через github, сервер обращается к github, вытаскивает из него данные о пользователе, и возвращает данные о пользователе + токен на основе его данных на фронт.
   На фронте отлавливается передача сообщения, чекается содержимое ответа, обновляются куки токена и переход на следующий этап */
+
+
   const onClickAuth = () => {
     window.open(
-      'http://localhost:3001/auth/github',
+      `${SERVER_URL}/auth/github`,
       'Auth',
       'width=500,height=500,status=yes,toolbar=no,menubar=no,location=no',
     );
@@ -36,17 +39,16 @@ export const GitHubStep: React.FC = () => {
 
   return (
     <div className={styles.block}>
-      <StepInfo icon="/static/connect.png" title="Do you want import info from GitHub?" />
+      
+      <StepInfo icon="/static/js-logo.png" title="Please log in to the application through your GitHub account" />
       <WhiteBlock className={clsx('m-auto mt-40', styles.whiteBlock)}>
         <Button
           onClick={onClickAuth}
           className={clsx(styles.button, 'd-i-flex align-items-center')}>
           <img className="d-ib mr-10" src="/static/github.svg" />
-          Import from GitHub
+          Log in from GitHub
           <img className="d-ib ml-10" src="/static/arrow.svg" />
         </Button>
-        {/* FIXME: добавить переход на добавление данных в ручном режиме */}
-        <div className="link mt-20 cup d-ib">Enter my info manually</div>
       </WhiteBlock>
     </div>
   );

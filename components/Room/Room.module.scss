@@ -1,8 +1,6 @@
 .wrapper {
   background-color: #fff;
   height: calc(100vh - 210px);
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
   padding: 30px 70px;
   margin-top: 40px;
 
@@ -20,7 +18,7 @@
 }
 
 .leaveButton {
-  color: #ff656d !important;
+  color: #fff !important;
   line-height: 32px;
   font-weight: 600;
 
@@ -28,6 +26,12 @@
     position: relative;
     top: 3px;
     margin-right: 5px;
+  }
+
+  background-color: #24292e;
+
+  &:hover {
+    background-color: lighten(#24292e, 10);
   }
 }
 

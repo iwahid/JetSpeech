@@ -55,9 +55,9 @@ export const ChooseAvatarStep: React.FC = () => {
   return (
     <div className={styles.block}>
       <StepInfo
-        icon="/static/celebration.png"
-        title={`Okay, ${userData?.fullname}!`}
-        description="How’s this photo?"
+        icon="/static/js-logo.png"
+        title={`Hi, ${userData?.fullname}!`}
+        description="Is it your photo?"
       />
       <WhiteBlock className={clsx('m-auto mt-40', styles.whiteBlock)}>
         <div className={styles.avatar}>
@@ -69,7 +69,7 @@ export const ChooseAvatarStep: React.FC = () => {
           </label>
         </div>
         <input id="image" ref={inputFileRef} type="file" hidden />
-        <Button onClick={onNextStep}>
+        <Button className={styles.button}  onClick={onNextStep}>
           Next
           <img className="d-ib ml-10" src="/static/arrow.svg" />
         </Button>

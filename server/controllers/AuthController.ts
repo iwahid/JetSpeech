@@ -32,7 +32,7 @@ class AuthController {
         where: whereQuery,
       });
       console.log(999)
-      // FIXME: Вот здесь проблемы с таблицей кодов 
+      // FIXME: Вот здесь проблемы с таблицей кодов. Вроде пофикшена 
 
       if (findCode) {
         await Code.destroy({

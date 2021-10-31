@@ -20,7 +20,7 @@ export const StartRoomModal: React.FC<StartRoomModalProps> = ({ onClose }) => {
 
   const onSubmit = async () => {
     if (!title) {
-      return alert('Укажите заголовок комнаты');
+      return alert('Please enter a title for the room');
     }
     const data: Room = await createRoom({ title, type });
     router.push(`/rooms/${data.id}`);
@@ -71,10 +71,12 @@ export const StartRoomModal: React.FC<StartRoomModalProps> = ({ onClose }) => {
         </div>
         <div className={styles.delimiter}></div>
         <div className="text-center">
-          <h3>Start a room open to everyone</h3>
-          <Button onClick={onSubmit} color="green">
-            <img width="18px" height="18px" src="/static/celebration.png" alt="Celebration" />
-            Let's go
+          {type === "open" && <h3>Start a room Open to everyone</h3>}
+          {type === "social" && <h3>Start a room Social for your group</h3>}
+          {type === "closed" && <h3>Start a room Closed for participation by the link</h3>}
+          <Button onClick={onSubmit} color="green" className={styles.button}>
+           {/*  <img width="18px" height="18px" src="/static/celebration.png" alt="Celebration" /> */}
+            Let's GO!
           </Button>
         </div>
       </div>

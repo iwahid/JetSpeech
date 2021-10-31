@@ -104,6 +104,8 @@ export const getServerSideProps = wrapper.getServerSideProps(async (ctx) => {
   try {
     const user = await checkAuth(ctx);
 
+    /* NOTE: явный редирект пользователя на страницу с комнатыами, с окна авторизации. ПОльзователь перемещается, если он уже зареган 
+    Точно так же перекидывает со всех страниц на регистрацию, если пользователь не авторизован*/
     if (user) {
       return {
         props: {},

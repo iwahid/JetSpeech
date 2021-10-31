@@ -1,11 +1,12 @@
 import React from 'react';
 import { io, Socket } from 'socket.io-client';
+import { SERVER_URL } from '../utils/config';
 
 export const useSocket = () => {
   const socketRef = React.useRef<Socket>();
 
   if (!socketRef.current) {
-    socketRef.current = typeof window !== 'undefined' && io('http://localhost:3001');
+    socketRef.current = typeof window !== 'undefined' && io(SERVER_URL);
   } else {
     socketRef.current.connect();
   }

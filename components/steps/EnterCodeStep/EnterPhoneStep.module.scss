@@ -23,3 +23,11 @@
     margin: 0 5px;
   }
 }
+
+.button {
+  background-color: #24292e;
+
+  &:hover {
+    background-color: lighten(#24292e, 10);
+  }
+}

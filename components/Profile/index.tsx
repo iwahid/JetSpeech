@@ -31,9 +31,9 @@ export const Profile: React.FC<ProfileProps> = ({ fullname, username, avatarUrl,
             <h3 className={clsx(styles.username, 'mt-0 mb-0')}>@{username}</h3>
           </div>
         </div>
-        <Button className={styles.followButton} color="blue">
-          Follow
-        </Button>
+       {/*  <Button className={styles.button}>
+          Invite
+        </Button> */}
       </div>
       <p className={styles.about}>{about}</p>
     </>

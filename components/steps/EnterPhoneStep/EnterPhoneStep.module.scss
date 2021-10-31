@@ -28,3 +28,11 @@
   color: #817f7a;
   margin-bottom: 0;
 }
+
+.button {
+  background-color: #24292e;
+
+  &:hover {
+    background-color: lighten(#24292e, 10);
+  }
+}

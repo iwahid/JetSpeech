@@ -11,21 +11,19 @@ export const WelcomeStep: React.FC = () => {
   return (
     <WhiteBlock className={styles.block}>
       <h3 className={styles.title}>
-        <img className={styles.handWaveImg} src="/static/hand-wave.png" alt="Celebration" />
-        {/* FIXME: заменить во всём приложении на русский */}
+        <img className={styles.handWaveImg} src="/static/js-logo.png" alt="Logo" />
         Welcome to JetSpeech!
       </h3>
       <p>
-        We’re working hard to get Clubhouse ready for everyone! While we wrap up the finishing
-        youches, we’re adding people gradually to make sure nothing breaks :)
+        We're working hard to keep JetSpeech ready for everyone!
+        At the moment, you can try out a prototype of the application, test your hypotheses about what you would like to see here and understand what tasks it can help you with :)
       </p>
       <div>
-        <Button onClick={onNextStep}>
+        <Button className={styles.button} onClick={onNextStep}>
           Get your username
           <img className="d-ib ml-10" src="/static/arrow.svg" />
         </Button>
       </div>
-      <div className="link mt-15 cup d-ib">Have an invite text? Sign in</div>
     </WhiteBlock>
   );
 };

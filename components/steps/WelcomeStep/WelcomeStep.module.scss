@@ -21,6 +21,15 @@
   }
 }
 
+.button {
+  background-color: #24292e;
+
+  &:hover {
+    background-color: lighten(#24292e, 10);
+  }
+}
+
+
 .title {
   display: flex;
   align-items: center;

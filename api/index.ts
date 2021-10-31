@@ -3,16 +3,16 @@ import { GetServerSidePropsContext } from 'next';
 import axios from 'axios';
 import { UserApi } from './UserApi';
 import { RoomApi } from './RoomApi';
+import { SERVER_URL } from '../utils/config';
 
 type ApiReturnType = ReturnType<typeof UserApi> & ReturnType<typeof RoomApi>;
 
-// TODO: Типизировать
 export const Api = (ctx: any): ApiReturnType => {
   const cookies = Cookies.get(ctx);
   const token = cookies.token;
 
   const instance = axios.create({
-    baseURL: 'http://localhost:3001',
+    baseURL: SERVER_URL,
     headers: {
       Authorization: 'Bearer ' + token,
     },

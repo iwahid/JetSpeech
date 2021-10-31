@@ -1,11 +1,13 @@
 import axios from 'axios';
 import { parseCookies } from 'nookies';
+import { SERVER_URL } from '../utils/config';
 
 const cookies = parseCookies();
 
 /* TODO: задокументировать наполнение запросов авторизационными данными */
+
 const Axios = axios.create({
-  baseURL: 'http://localhost:3001',
+  baseURL: SERVER_URL,
   headers: {
     Authorization: 'Bearer ' + cookies?.token,
   },

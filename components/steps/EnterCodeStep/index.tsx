@@ -50,7 +50,7 @@ export const EnterCodeStep = () => {
     <div className={styles.block}>
       {!isLoading ? (
         <>
-          <StepInfo icon="/static/numbers.png" title="Enter your activate code" />
+          <StepInfo icon="/static/js-logo.png" title="Enter your activate code" />
           <WhiteBlock className={clsx('m-auto mt-30', styles.whiteBlock)}>
             <div className={styles.codeInput}>
               {codes.map((code, index) => (
